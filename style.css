@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+     box-sizing: border-box;
 }
 body {
     background: url('./images/background.jpg') no-repeat fixed center;
@@ -18,16 +19,15 @@ body {
   grid-column-start: 1;
   grid-column-end: 13;
   background-color: white;
-  color: green;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 #empty {
-    margin-left : 60vw;
+    margin-left : 50vw;
 }
 #logo {
-
+  color: green;
 }
 #preambule {
   grid-row-start: 2;
@@ -38,8 +38,8 @@ body {
   display:flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   text-align: center;
-
   text-shadow: 1px 1px black;
 }
 #query {
@@ -55,13 +55,41 @@ body {
     background-color: white;
     width: 20vw;
     min-width: 150px;
-    height: 40vh;
+    height: 50vh;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#search > * {
+      width: 95%;
+}
+#search > div {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+  justify-content: center;
+
+}
+#search > div > input {
+    padding: 0.2em;
+}
+#nothing {
+    height: 4vh;
+
 }
 #result {
     background-color: white;
     min-width: 150px;
     width: 20vw;
-    height: 40vh;
+    height: 50vh;
     border-radius: 15px;
+}
+#cart {
+    color: black;
+}
+#booking {
+    color: black;
 }
