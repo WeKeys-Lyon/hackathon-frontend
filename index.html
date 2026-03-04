@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Tickethack</title>
+</head>
+
+<body>
+  <div id="container">
+    <div id = "header">
+        <div id = "logo-container">
+            Tickethack
+        </div>
+        <button type ="button" id="btn-cart">Cart</button>
+        <button type ="button" id="btn-bookings">Bookings</button>
+    </div>
+    <div id = "content">
+        <div id = "maintext">
+            <div id = "Titre1">Explorez le monde sans effort en train !</div>
+            <div id = "Titre2">Comparez, réservez et profitez de billets de train à prix avantageux : votre voyage commence sur Tickethack</div>
+        </div>
+        <div id= "cards">
+            <div id = "card-left">
+                <input id="départ" type= "text" placeholder ="Départ" />
+                <input id="arrivée" type= "text" placeholder ="Arrivée" />
+                <input id="date" type="date" />
+                <button type="button" id="btn-search">Recherche</button>
+            </div>
+            <div id = "card-right">
+                <div class="trip">
+                    <img id = 'train' src='./images/train.png'>
+                    <p id='bookyourtrip'>Il est temps de réserver votre prochain voyage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>  
+   <script src="script.js"></script> 
+</body>
+</html>

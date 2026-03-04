@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylecartbook.css" />
+    <title>Cart</title>
+</head>
+
+<body>
+  <div id="container">
+    <div id = "header">
+        <div id = "logo-container">
+            Tickethack
+        </div>
+        <div id="nav-buttons">
+            <button type ="button" id="btn-cart">Cart</button>
+            <button type ="button" id="btn-bookings">Bookings</button>
+        </div>
+    </div>
+    <div id = "content">
+        <div id= "card">
+                <p>Mon panier</p>
+                <div id="trip-card">
+                    <span class="route"> Lille > Lyon</span>
+                    <span class="time"> 12:40</span>
+                    <span class="price">99€</span>
+                    <button class="delete-button">x</button>
+                </div>
+                <div id = "purchase">
+                    <span id="total">Total : 99€</span>
+                    <button class="purchase-button">Achat</button>
+                </div>
+        </div>
+    </div>
+    <div id = "footer"></div>
+  </div>  
+    
+   <script src="script.js"></script> 
+</body>
+</html>

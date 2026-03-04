@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f4f4;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#header { 
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px 30px 10px;
+    background-color: white;
+}
+
+#logo-container{
+   font-weight: bold;
+    font-size: 22px;
+    color: rgb(87, 179, 116); 
+}
+
+#nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+#header button {
+    background: none;
+    border: none;
+    font-size: 16px;
+}
+
+#card{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 10px rgba(0,0,0,0.1);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+#trip-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background-color: #f8f3f3;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    gap : 10px;
+}
+
+#trip-card span{
+    font-size: 16px;
+    text-align: center;
+}
+
+.route {
+    text-align : left;
+}
+
+.price {
+    text-align : right;
+}
+
+.delete-button {
+    background-color : rgb(87, 179, 116);
+    border : none;
+    color : white;
+    font-weight : bold;
+    border-radius : 4px;
+    padding : 4px 8px;
+}
+
+#purchase {
+    background-color: #08153a;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top : 15px;
+    padding-bottom : 15px;
+    padding-left : 30px;
+    padding-right : 30px;
+    box-sizing : border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.purchase-button {
+    background-color: #4ca595;
+    border : none;
+    color: white;
+    padding: 6px 12px;
+    border-radius : 5px;
+    font-weight: bold;
+}
+
+ 
