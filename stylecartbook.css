@@ -1,9 +1,9 @@
 body {
     margin: 0;
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     background-color: #f3f4f4;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -22,7 +22,10 @@ a {
     padding: 30px 10px 30px 10px;
     background-color: white;
 }
-
+#content {
+    display: flex;
+    flex-direction: column;
+}
 #logo-container{
    font-weight: bold;
     font-size: 22px;
