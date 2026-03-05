@@ -15,11 +15,11 @@ function createDivResult(object) {
     //faire le calcule de l'heure du voyage
     let heure = ''; //Moment
     document.getElementById('card-right').innerHTML += `
-    <div class="trip">
+    <div class="voyage">
       <div class="trajetName">${object.departure} > ${object.arrival}</div>
       <div class="heure">${heure}</div>
       <div class="prix">${object.price}</div>
-      <div class="book-btn">Book</div>
+      <div class="book-btn"><button type="button">Book</div>
     </div>`
 } 
 
@@ -37,4 +37,8 @@ document.getElementById('btn-search').addEventListener('click', function() {
         data.trips.forEach(element => createDivResult(element))
       }
     })
+});
+
+document.getElementById('card-right').addEventListener('click', function() {
+  console.log(this);
 })
