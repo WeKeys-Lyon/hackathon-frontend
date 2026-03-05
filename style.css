@@ -6,7 +6,10 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
     background: url('./images/background.jpg') no-repeat fixed center;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 #container {
   display: grid; 
   grid-template-columns: repeat(20,1fr);
@@ -32,7 +35,7 @@ body {
     color: rgb(87, 179, 116);
     margin-left: 20px;
 }
-#btn-cart {
+#href-cart {
     grid-area : 1/12/1/17;
     margin: 6px;
     border: 0px;
@@ -41,7 +44,7 @@ body {
     font-size: 14px;
     text-align: right;
 }
-#btn-bookings {
+#href-bookings {
     grid-area : 1/17/1/21;
     margin : 6px;
     border: 0px;
