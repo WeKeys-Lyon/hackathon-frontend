@@ -18,7 +18,7 @@ function createDivResult(object) {
     <div class="voyage">
       <div class="trajetName">${object.departure} > ${object.arrival}</div>
       <div class="heure">${heure}</div>
-      <div class="prix">${object.price}</div>
+      <div class="prix">${object.price} €</div>
       <div style="content-visibility: hidden">${object.date['$date']}</div>
       <div class="book-btn"><button type="button">Book</div>
     </div>`
@@ -29,7 +29,9 @@ function addToCart(object, cookie){
   console.log(trajet)
   fetch('http://localhost:3000/trips/addtocart', {
 		method: 'POST',
-		headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+		headers: { 'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json'
+    },
 		body: JSON.stringify({ cookie: cookie, trajet: trajet, date: date, prix: prix }),
 	}).then(response => response.json()).then(data => console.log(data))
 }
