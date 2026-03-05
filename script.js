@@ -24,15 +24,14 @@ function createDivResult(object) {
     </div>`
 } 
 
-function addToCart(object, cookie){
+async function addToCart(object, cookie){
   let {trajet, date, prix} = object;
   console.log(trajet)
-  fetch('http://localhost:3000/trips/addtocart', {
+  await fetch('http://localhost:3000/trips/addtocart', {
 		method: 'POST',
-		headers: { 'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json'
+		headers: { 'Content-Type': 'application/json'
     },
-		body: JSON.stringify({ cookie: cookie, trajet: trajet, date: date, prix: prix }),
+		body: JSON.stringify({ cookie: cookie, trajet: trajet, date: date, price: parseInt(prix) }),
 	}).then(response => response.json()).then(data => console.log(data))
 }
 
@@ -62,7 +61,7 @@ document.getElementById('btn-search').addEventListener('click',function() {
           prix: e.target.parentElement.parentElement.children[2].innerText
         }
         let cookie = document.cookie;
-        console.log(cartObject + cookie)
+        console.log(cartObject)
         await addToCart(cartObject, cookie)
       }
 });
