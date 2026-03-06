@@ -50,28 +50,22 @@ document.querySelector('#card').addEventListener('click', async function(e) {
 		headers: { 'Content-Type': 'application/json'
     },
 		body: JSON.stringify({ cookie: cookie, id: id}),
-	}).then(response => response.json()).then(data => {
-        console.log(data)
-        getAllTrips(cookie);
-    })
+	}).then(response => response.json()).then(getAllTrips(cookie))
         
     }
 });
 
 document.querySelector('#purchase-button').addEventListener('click', function() {
     let allTrips = document.querySelectorAll('.trip-card');
-    console.log(allTrips)
+    
     allTrips.forEach(async trajet => {
-        console.log(trajet.children[3].firstElementChild.id)
+        
         await fetch('http://localhost:3000/trips/addtobooking', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },
 		body: JSON.stringify({ cookie: cookie, cartId: trajet.children[3].firstElementChild.id}),
-	}).then(response => response.json()).then(data => {
-        getAllTrips(cookie);
-        
-    })
+	}).then(response => response.json()).then(getAllTrips(cookie))
     })
     
 })
