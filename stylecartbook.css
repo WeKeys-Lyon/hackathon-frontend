@@ -21,7 +21,10 @@ a {
     justify-content: space-between;
     align-items: center;
     background-color: white;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(1,1fr);
 }
+
 #container {
   display: grid; 
   grid-template-columns: repeat(20,1fr);

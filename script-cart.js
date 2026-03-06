@@ -15,16 +15,15 @@ function addTrip(tableau){
 
 async function getAllTrips(cookie) {
     document.querySelector('#card').innerHTML = '<p>Mon panier</p>';
-   await fetch('http://localhost:3000/trips/alltrips', {
+   const response = await fetch('http://localhost:3000/trips/alltrips', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },
 		body: JSON.stringify({ cookie: cookie}),
-	}).then(response => response.json()).then(data => {
-        
-        addTrip(data.voyages)
+	})
+    const data = await response.json();
 
-    })
+    addTrip(data.voyages)
     calculateTotalPrice();
 }
 function calculateTotalPrice() {
@@ -60,12 +59,15 @@ document.querySelector('#purchase-button').addEventListener('click', function() 
     
     allTrips.forEach(async trajet => {
         
-        await fetch('http://localhost:3000/trips/addtobooking', {
+        const response = await fetch('http://localhost:3000/trips/addtobooking', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },
 		body: JSON.stringify({ cookie: cookie, cartId: trajet.children[3].firstElementChild.id}),
-	}).then(response => response.json()).then(getAllTrips(cookie))
+	})
+        const data = await response.json();
+        data
+        getAllTrips(cookie);
     })
     
 })
