@@ -11,7 +11,8 @@ a {
     text-decoration: none;
     color: inherit;
 }
-#header { 
+#header {
+    grid-area: 1 / 1 / 2 / 21;
     position: absolute;
     top: 0px;
     left: 0;
@@ -19,12 +20,22 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10px 30px 10px;
     background-color: white;
 }
+#container {
+  display: grid; 
+  grid-template-columns: repeat(20,1fr);
+  grid-template-rows: repeat(20,1fr);
+  gap: 0px 0px; 
+  height: 100vh;
+  width: 100vw;
+}
 #content {
+    grid-area: 2 / 1 / 21 / 21;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 #logo-container{
    font-weight: bold;
@@ -45,18 +56,20 @@ a {
 
 #card{
     background-color: white;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0 ;
     box-shadow: 0 20px 10px rgba(0,0,0,0.1);
-    width: 500px;
+    width: 75vw;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
-#trip-card {
-    display: flex;
-    justify-content: space-between;
+.trip-card {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "trajet trajet trajet date date prix prix delete";
     align-items: center;
     width: 90%;
     background-color: #f8f3f3;
@@ -66,17 +79,24 @@ a {
     gap : 10px;
 }
 
-#trip-card span{
+#trip-card > span{
     font-size: 16px;
     text-align: center;
 }
 
 .route {
     text-align : left;
+    grid-area: trajet;
+}
+
+.time {
+     text-align : center;
+    grid-area: date; 
 }
 
 .price {
-    text-align : right;
+    text-align : center;
+    grid-area: prix;
 }
 
 .delete-button {
@@ -86,12 +106,14 @@ a {
     font-weight : bold;
     border-radius : 4px;
     padding : 4px 8px;
+    grid-area: delete;
 }
 
 #purchase {
     background-color: #08153a;
     color: white;
-    width: 100%;
+    width: 75vw;
+    max-width: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
