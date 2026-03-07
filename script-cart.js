@@ -22,8 +22,12 @@ async function getAllTrips(cookie) {
 		body: JSON.stringify({ cookie: cookie}),
 	})
     const data = await response.json();
-
-    addTrip(data.voyages)
+    if (data.voyages == 0 || data.result == false) {
+        console.log('Hey, jai pas de voyages')
+        document.getElementById('card').innerHTML += `
+        <div style="margin-bottom: 25px">Le panier est vide, veuillez ajouter des trajets</div>`
+    } else {
+    addTrip(data.voyages) }
     calculateTotalPrice();
 }
 function calculateTotalPrice() {
