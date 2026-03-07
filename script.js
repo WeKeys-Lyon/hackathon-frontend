@@ -7,7 +7,7 @@ function createCookie() {
   number =  Math.floor(Math.random() * 50000);
     (!document.cookie) ? document.cookie = 'cookie='+number+';expires='+now.toUTCString()+';path=/' : '';
   }
-createCookie();
+(document.cookie) ? '' : createCookie();
 document.getElementById('date').valueAsDate = new Date();
 
 //Création div des résultat
@@ -37,17 +37,24 @@ async function addToCart(object, cookie){
 
 let myCookie = document.cookie;
 document.getElementById('btn-search').addEventListener('click',function() {
-    let departure = document.querySelector('#depart').value;
-    let arrival = document.querySelector('#arrivee').value;
+    let departure = document.querySelector('#depart').value.trim();
+    let arrival = document.querySelector('#arrivee').value.trim();
     let date = document.querySelector('#date').value;
     console.log(departure + ' ' + arrival + ' ' + date);
     fetch('http://localhost:3000/trips/request/' + departure +'/'+arrival+'/'+date)
     .then(response => response.json())
     .then(data => {
       if (data.result) {
-        console.log(data)
-        document.querySelector('.trip').remove();
+        
+         if (document.querySelector('.trip')) {document.querySelector('.trip').remove();
+         } else {document.getElementById('card-right').innerHTML = '';}
         data.trips.forEach(element => createDivResult(element))
+      } else {
+        document.querySelector('.trip').innerHTML = `
+        <div class="trip">
+                    <img id = 'train' src='./images/notfound.png'>
+                    <p id='bookyourtrip'>Je n'ai pas trouvé de trajet pour vos choix</p>
+                </div>`
       }
     });
     let x = document.getElementById('card-right')

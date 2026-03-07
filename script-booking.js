@@ -29,7 +29,12 @@ async function getBookings(cookie) {
 		body: JSON.stringify({ cookie: cookie}),
 	}).then(response => response.json()).then( data => {
         console.log(data)
+        if (data.voyages == 0 || data.result == false) {
+            document.querySelector('#card').innerHTML += `
+            <div style="margin-bottom: 25px">Les réservations sont vides, veuillez faire des achats de billets</div>`
+        } else {
         addLine(data.voyages);
+        }
         document.querySelector('#card').innerHTML += '<p id="greentext">Profitez de vos voyages avec Tickethack !</p>';
 
     })
