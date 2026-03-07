@@ -49,14 +49,17 @@ document.getElementById('btn-search').addEventListener('click',function() {
          if (document.querySelector('.trip')) {document.querySelector('#card-right').innerHTML = '';
          } else {document.getElementById('card-right').innerHTML = '';}
         data.trips.forEach(element => createDivResult(element))
+        document.getElementById('card-right').style.width = '33vw';
+        document.getElementById('card-right').style.minWidth = '316px';
       } else {
         if (document.querySelector('.trip')) {
           document.querySelector('.trip').innerHTML = `
         
-                    <img id = 'train' src='./images/notfound.png'>
+                    <img id = 'loupe' src='./images/notfound.png'>
                     <p id='bookyourtrip'>Je n'ai pas trouvé de trajet pour vos choix</p>
           `
         } else {
+          document.getElementById('card-right').style.width = '25vw';
                     document.querySelector('#card-right').innerHTML = `
           <div class="trip">
                     <img id = 'train' src='./images/notfound.png'>

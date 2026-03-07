@@ -34,7 +34,8 @@ a {
 #logo-container{
    font-weight: bold;
     font-size: 22px;
-    color: rgb(87, 179, 116); 
+    color: rgb(87, 179, 116);
+    margin-left: 15px;
 }
 #href-cart {
     grid-area : 1/12/1/17;
@@ -47,7 +48,7 @@ a {
 }
 #href-bookings {
     grid-area : 1/17/1/21;
-    margin : 6px;
+    margin : 6px 15px 6px 6px;
     border: 0px;
     font-family: 'Trebuchet MS', sans-serif;
     background-color: white;
@@ -76,7 +77,49 @@ a {
   justify-content: space-evenly;
   align-items: start;
 }
-
+@media (max-width: 510px) {
+    #cards {
+        flex-direction: column;
+        align-items: center !important;
+    }
+    #card-left {
+        width: 100% !important;
+        min-width: 100px !important;
+        margin-bottom: 10px;
+    }
+    #card-left > div {
+        width: 100% !important;
+    }
+    #card-right {
+        width: 100% !important;
+        min-width: 100px !important;
+        margin-bottom: 10px;
+    }
+    #date {
+        min-width: 30px !important;
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+        font-size: 8px !important;
+    }
+    #depart {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    #arrivee {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    #btn-search {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    #train {
+        width: 41% !important;
+    }
+    #loupe {
+        width: 28% !important;
+    }
+}
 #card-left {
     background-color: white;
     border-radius: 10px;
@@ -85,7 +128,7 @@ a {
     justify-content: space-around;
     align-items: center;
     width: 25vw;
-    min-width: 150px;
+    min-width: 189px;
     height: 50vh;
 } 
 
@@ -94,7 +137,6 @@ a {
     height: auto;
     display: flex;
     flex-direction: column;
-    min-width: 120px;
   justify-content: center;
 
 }
@@ -208,7 +250,9 @@ a {
 #train {
     width: 60%;
 }
-
+#loupe {
+    width: 50%
+}
 #notfound {
     padding-top: 50px;
     margin-top: 50px;
