@@ -24,7 +24,7 @@ function addLine(tableau){
 
 async function getBookings(cookie) {
     document.querySelector('#card').innerHTML += '<p>Mes réservations</p>';
-    await fetch('http://localhost:3000/trips/allbookings', {
+    await fetch('https://hackathon-backend-sage.vercel.app/trips/allbookings', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },

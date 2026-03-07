@@ -15,7 +15,7 @@ function addTrip(tableau){
 
 async function getAllTrips(cookie) {
     document.querySelector('#card').innerHTML = '<p>Mon panier</p>';
-   const response = await fetch('http://localhost:3000/trips/alltrips', {
+   const response = await fetch('https://hackathon-backend-sage.vercel.app/trips/alltrips', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },
@@ -47,7 +47,7 @@ document.querySelector('#card').addEventListener('click', async function(e) {
     console.log(e.target)
     if(e.target.className == "delete-button") {
         let id = e.target.id;
-        await fetch('http://localhost:3000/trips/deleteatrip', {
+        await fetch('https://hackathon-backend-sage.vercel.app/trips/deleteatrip', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },
@@ -62,7 +62,7 @@ document.querySelector('#purchase-button').addEventListener('click', function() 
     
     allTrips.forEach(async trajet => {
         
-        const response = await fetch('http://localhost:3000/trips/addtobooking', {
+        const response = await fetch('https://hackathon-backend-sage.vercel.app/trips/addtobooking', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },

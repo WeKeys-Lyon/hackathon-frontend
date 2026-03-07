@@ -27,7 +27,7 @@ function createDivResult(object) {
 async function addToCart(object, cookie){
   let {trajet, date, prix} = object;
   console.log(trajet)
-  await fetch('http://localhost:3000/trips/addtocart', {
+  await fetch('https://hackathon-backend-sage.vercel.app/trips/addtocart', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'
     },
@@ -41,7 +41,7 @@ document.getElementById('btn-search').addEventListener('click',function() {
     let arrival = document.querySelector('#arrivee').value.trim();
     let date = document.querySelector('#date').value;
     console.log(departure + ' ' + arrival + ' ' + date);
-    fetch('http://localhost:3000/trips/request/' + departure +'/'+arrival+'/'+date)
+    fetch('https://hackathon-backend-sage.vercel.app/trips/request/' + departure +'/'+arrival+'/'+date)
     .then(response => response.json())
     .then(data => {
       if (data.result) {
