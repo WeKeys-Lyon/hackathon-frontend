@@ -1,6 +1,8 @@
 let cookie = document.cookie;
 function addLine(tableau){
     console.log(tableau)
+    tableau.sort((a,b) => moment(a.date) - moment(b.date));
+    console.log(tableau)
     tableau.forEach(booking => {
         let heure = moment(booking.date).format('HH:mm');
         let diff = Math.round(moment().diff(booking.date,'minutes')/60)

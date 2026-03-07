@@ -65,7 +65,7 @@ a {
     border-radius: 10px 10px 0 0 ;
     box-shadow: 0 20px 10px rgba(0,0,0,0.1);
     width: 75vw;
-    max-width: 500px;
+    max-width: 614px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,7 +119,7 @@ a {
     background-color: #08153a;
     color: white;
     width: 75vw;
-    max-width: 500px;
+    max-width: 614px;
     display: flex;
     justify-content: space-between;
     align-items: center;
