@@ -11,7 +11,7 @@ function addLine(tableau){
             difference = `Départ dans ${Math.abs(diff)} heures`
         }
         document.querySelector('#card').innerHTML += `
-        <div id="trip-card">
+        <div class ="trip-card">
                     <div class="route">${booking.trajet}</div>
                     <div class="time">${heure}</div>
                     <div class="price">${booking.price}€</div>
