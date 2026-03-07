@@ -46,15 +46,24 @@ document.getElementById('btn-search').addEventListener('click',function() {
     .then(data => {
       if (data.result) {
         
-         if (document.querySelector('.trip')) {document.querySelector('.trip').remove();
+         if (document.querySelector('.trip')) {document.querySelector('#card-right').innerHTML = '';
          } else {document.getElementById('card-right').innerHTML = '';}
         data.trips.forEach(element => createDivResult(element))
       } else {
-        document.querySelector('.trip').innerHTML = `
-        <div class="trip">
+        if (document.querySelector('.trip')) {
+          document.querySelector('.trip').innerHTML = `
+        
+                    <img id = 'train' src='./images/notfound.png'>
+                    <p id='bookyourtrip'>Je n'ai pas trouvé de trajet pour vos choix</p>
+          `
+        } else {
+                    document.querySelector('#card-right').innerHTML = `
+          <div class="trip">
                     <img id = 'train' src='./images/notfound.png'>
                     <p id='bookyourtrip'>Je n'ai pas trouvé de trajet pour vos choix</p>
                 </div>`
+        }
+        
       }
     });
     let x = document.getElementById('card-right')
