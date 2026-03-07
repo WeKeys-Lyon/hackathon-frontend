@@ -69,21 +69,20 @@ document.getElementById('btn-search').addEventListener('click',function() {
         
       }
     });
-    let x = document.getElementById('card-right')
-    document.getElementById('card-right').addEventListener('click', async (e) => {
-      if(e.target.parentElement.classList.contains('book-btn')) {
-        
-        let cartObject = {};
-        cartObject = {
-          trajet: e.target.parentElement.parentElement.children[0].innerText,
-          date: e.target.parentElement.parentElement.children[3].firstChild.data,
-          prix: e.target.parentElement.parentElement.children[2].innerText
-        }
-        let cookie = document.cookie;
-        
-        await addToCart(cartObject, cookie)
-      }
 });
 
-
+let x = document.getElementById('card-right')
+document.getElementById('card-right').addEventListener('click', async (e) => {
+  if(e.target.parentElement.classList.contains('book-btn')) {
+    
+    let cartObject = {};
+    cartObject = {
+      trajet: e.target.parentElement.parentElement.children[0].innerText,
+      date: e.target.parentElement.parentElement.children[3].firstChild.data,
+      prix: e.target.parentElement.parentElement.children[2].innerText
+    }
+    let cookie = document.cookie;
+    
+    await addToCart(cartObject, cookie)
+  }
 });
