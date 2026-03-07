@@ -1,67 +1,288 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+
 body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', sans-serif;
     background: url('./images/background.jpg') no-repeat fixed center;
 }
-#main {
-  display: grid;
-  grid-template-rows: repeat(12, 1fr);
-  grid-template-columns: repeat(12, 1fr);
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#container {
+  display: grid; 
+  grid-template-columns: repeat(20,1fr);
+  grid-template-rows: repeat(20,1fr);
+  gap: 0px 0px; 
   height: 100vh;
   width: 100vw;
 }
 #header {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 13;
-  background-color: white;
-  color: green;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    grid-area: 1 / 1 / 2 / 21;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(1,1fr);
 }
-#empty {
-    margin-left : 60vw;
+#logo-container{
+   font-weight: bold;
+    font-size: 22px;
+    color: rgb(87, 179, 116);
+    margin-left: 15px;
 }
-#logo {
+#href-cart {
+    grid-area : 1/12/1/17;
+    margin: 6px;
+    border: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: white;
+    font-size: 14px;
+    text-align: right;
+}
+#href-bookings {
+    grid-area : 1/17/1/21;
+    margin : 6px 15px 6px 6px;
+    border: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: white;
+    font-size: 14px;
+    text-align: right;
+}
+#content { 
+    grid-area: 2 / 1 / 21 / 21;
 
 }
-#preambule {
-  grid-row-start: 2;
-  grid-row-end: 4;
-  grid-column-start: 1;
-  grid-column-end: 13;
-  color: white;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 
-  text-shadow: 1px 1px black;
+#maintext { 
+    grid-area: 2/1/6/21;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    color: white;
 }
-#query {
-  grid-row-start: 4;
-  grid-row-end: 10;
-  grid-column-start: 1;
-  grid-column-end: 13;
-  display: flex;
+
+#cards { 
+    grid-area: 4 / 1 / 19 / 21;
+    display: flex;
   justify-content: space-evenly;
   align-items: start;
 }
-#search {
-    background-color: white;
-    width: 20vw;
-    min-width: 150px;
-    height: 40vh;
-    border-radius: 15px;
+@media (max-width: 510px) {
+    #cards {
+        flex-direction: column;
+        align-items: center !important;
+    }
+    #card-left {
+        width: 100% !important;
+        min-width: 100px !important;
+        margin-bottom: 10px;
+    }
+    #card-left > div {
+        width: 100% !important;
+    }
+    #card-right {
+        width: 100% !important;
+        min-width: 100px !important;
+        margin-bottom: 10px;
+    }
+    #date {
+        min-width: 30px !important;
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+        font-size: 8px !important;
+    }
+    #depart {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    #arrivee {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    #btn-search {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    #train {
+        width: 41% !important;
+    }
+    #loupe {
+        width: 28% !important;
+    }
+    .voyage {
+        width: 90% !important;
+    }
 }
-#result {
+#card-left {
     background-color: white;
-    min-width: 150px;
-    width: 20vw;
-    height: 40vh;
-    border-radius: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25vw;
+    min-width: 189px;
+    height: 50vh;
+} 
+
+#card-left > div {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+
 }
+#depart{
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: 1px grey solid;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    background-color: rgb(232, 229, 229);
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#arrivee {
+    padding:10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(232, 229, 229);
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+#date {
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0px;
+    background-color: rgb(232, 229, 229);
+    border-radius: 5px;
+    min-width: 120px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#btn-search {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0px;
+    background-color: rgb(87, 179, 116);
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#card-right{
+    background-color: white;
+    flex-direction: column;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25vw;
+    min-width: 150px;
+    height: 50vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    
+} 
+
+.trip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 100%;   
+}  
+
+.book-btn > button{
+    background-color: rgb(87, 179, 116); 
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.voyage {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
+    width: 87%;
+    background-color: #f8f3f3;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    gap : 10px;
+}
+
+#bookyourtrip {
+    font-size : 20px;
+    border-top: 2px rgb(87, 179, 116) solid;
+    text-align: center;
+    padding-top: 15px;
+    
+}
+
+#train {
+    width: 60%;
+}
+#loupe {
+    width: 50%
+}
+#notfound {
+    padding-top: 50px;
+    margin-top: 50px;
+    font-size : 20px;
+    border-top: 2px rgb(87, 179, 116) solid;
+}
+
+#notfoundimg {
+    width: 40%;
+    height: 40%;
+    justify-self: center
+}
+
+.search-result {
+    display :flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    padding: 15px 7.5px 15px 7.5px;
+    margin:7.5px;
+    background-color: rgb(232, 229, 229);
+    border-radius: 5px;
+}
+
+.book-button {
+    background-color: rgb(87, 179, 116);
+    color: white;
+    border: 0px;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding: 5px 8px 5px 8px;
+    border-radius: 3px;
+  }

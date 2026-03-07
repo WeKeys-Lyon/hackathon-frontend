@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réserve ton billet !</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <title>Tickethack</title>
 </head>
+
 <body>
-    <div id="main">
-    <div id="header">
-        <div id="logo">Tickethack</div>
-        <div id="empty"></div>
-        <div id="cart">Cart</div>
-        <div id="booking">booking</div>
+  <div id="container">
+        <div id = "header">
+        <div id = "logo-container">
+            <a href="./index.html">Tickethack</a>
+        </div>
+        <div id="nav-buttons">
+            <a href="./cart.html" id="href-cart">Cart</a>
+        <a href="./bookings.html" id="href-bookings">Bookings</a>
+        </div>
     </div>
-    <div id="preambule"><section><h1>Explore the world effortlessly by train!</h1><p>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</p></section></div>
-    <div id="query">
-        <div id="search"></div>
-        <div id="result"></div>
+    <div id = "content">
+        <div id = "maintext">
+            <section><h1>Explore the world effortlessly by train!</h1><p>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</p></section>
+        </div>
+        <div id= "cards">
+            <div id = "card-left">
+                <div><input id="depart" type= "text" placeholder ="Departure" />
+                <input id="arrivee" type= "text" placeholder ="Arrival" /></div>
+
+                <div><input id="date" type="date" /></div>
+                <div><button type="button" id="btn-search">Recherche</button></div>
+            </div>
+            <div id = "card-right">
+                <div class="trip">
+                    <img id = 'train' src='./images/train.png'>
+                    <p id='bookyourtrip'>Il est temps de réserver votre prochain voyage.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    <script src="script.js"></script>
+  </div>  
+   <script src="script.js"></script> 
 </body>
 </html>
