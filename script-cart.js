@@ -23,9 +23,8 @@ async function getAllTrips(cookie) {
 	})
     const data = await response.json();
     if (data.voyages == 0 || data.result == false) {
-        console.log('Hey, jai pas de voyages')
-        document.getElementById('card').innerHTML += `
-        <div style="margin-bottom: 25px">Le panier est vide, veuillez ajouter des trajets</div>`
+        (document.querySelector('#card').children.length > 1) ? '' : document.getElementById('card').innerHTML += `
+        <div style="margin-bottom: 25px">Le panier est vide, veuillez ajouter des trajets</div>`        
     } else {
     addTrip(data.voyages) }
     calculateTotalPrice();
@@ -53,7 +52,7 @@ document.querySelector('#card').addEventListener('click', async function(e) {
 		headers: { 'Content-Type': 'application/json'
     },
 		body: JSON.stringify({ cookie: cookie, id: id}),
-	}).then(response => response.json()).then(getAllTrips(cookie))
+	}).then(response => response.json()).then(async data => await getAllTrips(cookie))
         
     }
 });
@@ -71,7 +70,7 @@ document.querySelector('#purchase-button').addEventListener('click', function() 
 	})
         const data = await response.json();
         data
-        getAllTrips(cookie);
+        await getAllTrips(cookie);
     })
     
 })
